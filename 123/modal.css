@@ -1,0 +1,47 @@
+input[type="checkbox"]{
+    display: none;
+}
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
+    border-bottom: 10px solid white;
+    position: relative;
+    bottom: 10px;
+    left: 4px;
+}
+.modalogin{
+    display: block;
+    height: 25px;
+    width: 20px;
+    background: transparent;
+    position: relative;
+}
+.modalmain{
+    width: 200px;
+    height: 80px;
+    position: relative;
+    background: transparent;
+    border: 1px solid white;
+    top: 32px;
+    left: -150px;
+}
+.links{
+    float: left;
+    position: relative;
+    top: 30px;
+    margin-right: 11%;
+}
+
+input +label .modalmain, input +label .arrow-up{
+    display: none;
+}
+
+input:checked + label .modalmain{
+    display: block;
+}
+input:checked + label .arrow-up{
+    display: block;
+}

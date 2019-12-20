@@ -1,0 +1,603 @@
+body{
+    background-image: url("img/test.jpg");
+    background-size: cover;
+    background-color: black;
+    color: white;
+    font-family: Helvetica;
+    
+    margin: 0;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color:  rgba(138, 43, 226,0.1);
+}
+::-webkit-scrollbar-thumb{
+    background-color:  rgba(138, 43, 226,0.3);
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+}
+  
+  /* Add some content at the bottom of the video/page */
+.content {
+position: fixed;
+bottom: 0;
+background: rgba(0, 0, 0, 0.5);
+color: #f1f1f1;
+width: 100%;
+padding: 20px;
+}
+.telo{
+    
+    width: 100%; 
+    min-height: calc(100vh - 70px);
+}
+#backopacity{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 120px;
+    opacity: 0.1;
+    background: #3509a4;
+    z-index: -1;
+}
+#showme{
+    display: none;
+}
+a{
+    color: white;
+    text-decoration: none;
+
+}
+.navbar{
+    height: calc(60px - 30px);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+.navbar a{
+    font-size: 18px;
+    /* color: rgb(218, 179, 255); */
+    color: white;
+}
+#navleft{
+    margin-left: 6%;
+}
+#navheader{
+    
+    height: calc(60px - 15px);
+    width: 200px;
+    font-size: 28px;
+    font-weight: 800;
+    float: left;
+    padding-top: 15px;
+    transition-duration: 0.3s;
+    
+}
+#borderhead{
+    position: absolute;
+    top: 0px;
+    height: 5px;
+    width: 0px;
+    background-color: white;
+    opacity: 0.3;
+    transition-duration: 0.3s;
+
+}
+#headtext{
+    color: white;
+
+}
+#navheader:hover{
+    font-size: 30px;
+    
+}
+#navheader:hover #borderhead{
+    width: 280px;
+}
+#navright{
+    margin-right: 7%;
+    display: flex;
+    transition-duration: 0.3s;
+    height: calc(100vh - 70px);
+    position:absolute;
+    right: 10px;
+    z-index: 100;
+    text-align: center;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    right: -25px;
+}
+.navelement{
+
+    width: 80px;
+    height: calc(60px - 20px);
+    transition-duration: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end
+    
+}
+
+#contact{
+    font-size: 17px;
+    width: 100px;
+    position: relative;
+}
+#contact:hover{
+    font-size: 19px;
+    cursor: pointer;
+}
+.navelement .linkRouting{
+    font-size: 18px;
+}
+.navelement .linkRouting{
+    transition-duration: 0.3s;
+}
+.navelement:hover .linkRouting{
+    font-size: 19px;
+   
+}
+#userimg{
+    position: relative;
+    top: -10px;
+    width: 30px;
+    height: 30px;
+    transition-duration: 0.3s;
+}
+#userimg:hover{
+    cursor: pointer;
+}
+#user{
+    width: 25px;
+    height: 15px;
+    margin-top: 10px;
+    position: relative;
+    margin-bottom: 25px;
+
+}
+#user:hover .modalogin{
+    display: block;
+
+}
+#user:hover .modalmain{
+    width: 200px;
+}
+#user:hover .modalmain a{
+    opacity: 1;
+}
+#user:hover .arrow-up{
+    opacity: 1;
+}
+#user:hover p{
+    opacity: 1;
+}
+#header{
+    font-size: 150px;
+    font-weight: 600;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+.regbut{
+   position: relative;
+   top: 700px;
+   margin-left: 20%;
+   margin-right: 20%;
+
+}
+.regbut:hover{
+    font-size: 18px;
+}
+.context{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+}
+#leftbar{
+    position: absolute;
+    margin-top: 4%;
+    margin-left: 10%;
+    width: 10%;
+    height: 675px;
+    background-color: blueviolet;
+    transition-duration: 0.2s;
+    opacity: 0.1;
+}
+#leftbar:hover{
+    opacity: 0.2;
+}
+#videoabsolute{
+    position: absolute;
+    margin-top: 4%;
+    left: 22%;
+    width: 70%;
+    height: 400px;
+    background-color: blueviolet;
+    transition-duration: 0.2s;
+    opacity: 0.1;
+}
+#videoabsolute:hover{
+    opacity: 0.2;
+}
+#videocontext{
+    position: absolute;
+    margin-top: 4%;
+    left: 420px;
+    width: 70%;
+    height: 400px;
+}
+#video1{
+    position: absolute;
+    left: 30px;
+    top:25px;
+    opacity: 0.9;
+}
+#video1 iframe{
+    width: 620px;
+    height:350px; 
+}
+#more{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 75px;
+}
+.minivideo{
+    margin-top: 15px;
+}
+#downbar{
+    position: absolute;
+    left: 22%;
+    top: 610px;
+    width: 70%;
+    height: 230px;
+    background-color: blueviolet;
+    transition-duration: 0.2s;
+    opacity: 0.1;
+}
+#downbar:hover{
+    opacity: 0.2;
+}
+.footer{
+    margin-left: 6%;
+    margin-right: 9%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+#footleft{
+    display: flex;
+    margin-left: 10px;
+
+}
+#footright p{
+    font-size: 12px;
+    position: relative;
+    top: -10px;
+    color: rgb(164, 124, 202);
+}
+.footer a{
+    
+    margin-left: 15px;
+    font-size: 12px;
+    transition-duration: 0.3s;
+    color: rgb(164, 124, 202);
+}
+#footLinks a:hover{
+    font-size: 13px;
+}
+#cartLink img{
+    position: relative;
+    
+}
+#cartCercle{
+    position: relative;
+    text-align: center;
+    color: rgba(164, 124, 202, 1);
+    top: -30px;
+    left: 30px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    font-weight: 900;
+    
+}
+#cartDiv{
+    height: 40px;
+    position: relative;
+    top: -5px;
+    transition-duration: 0.2s;
+}
+
+
+
+
+/* SHOP */
+
+#listData{
+    margin-left: 50px;
+    margin-top: 4%;
+    width: calc(58% - 160px);
+    height: 675px;
+    padding-left: 80px;
+    padding-right: 80px;
+    transition-duration: 0.2s;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: rgba(138, 43, 226, 0.05);
+    overflow: auto;
+}
+#listData:hover{
+    background-color: rgba(138, 43, 226,0.1);
+}
+#inspectData{
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4%;
+    width: 22%;
+    background-color: rgba(138, 43, 226,0.05);
+    transition-duration: 0.2s;
+}
+#inspectData:hover{
+    background-color: rgba(138, 43, 226,0.1);
+}
+#inspectContainer{
+    margin-top: 50px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#inspectContainer form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#inspectContainer h3{
+    margin-block-start: 0em;
+}
+#inspectContainer p{
+    margin-block-start: 0.6em;
+    margin-block-end: 0.6em;
+
+}
+#inspectContainer img{
+    width: 250px;
+    height: 250px;
+    box-shadow: 1px 1px 20px -6px white;
+}
+.container{
+    margin-top: 40px;
+    width: 150px;
+    height: 200px;
+    background-color: rgba(164, 124, 202, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    transition-duration: 0.2s;
+
+}
+.container p{
+    margin-block-start: 0.6em;
+    margin-block-end: 0.4em;
+}
+.container:hover{
+    box-shadow: 1px 1px 25px -13px white;
+    cursor: pointer;
+    z-index: 50;
+}
+.container img{
+    margin-top: 20px;
+}
+#addtocart{
+    margin-top: 20px;
+    background-color: rgba(238, 130, 238, 0.4);
+    color: white;
+    border: 0;
+    width: 250px;
+    height: 30px;
+    transition-duration: 0.2s;
+}
+#price{
+    font-size: 25px;
+}
+#addtocart:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 27px -7px white;
+}
+#addtocart:focus{
+    outline: none;
+}
+
+
+
+
+/* CART */
+#shopData{
+    right: 171px;
+    margin-top: 5%;
+    width: calc(67% - 160px);
+    height: 610px;
+    transition-duration: 0.2s;
+    overflow: auto;
+    
+}
+#shopData th{
+  padding: 2px;
+  border: 0.4px solid rgba(218, 179, 255,0.4);
+  position: sticky;
+  top: 0;
+}
+td span{
+    z-index: 15;
+}
+.row{
+    transition-duration: 0.1s;
+}
+.row:hover{
+    box-shadow: 1px 1px 10px -6px white;
+    cursor: pointer;
+}
+table{
+    position: relative;
+    top:10px;
+    text-align: center;
+    
+}
+table a:hover{
+    text-decoration: underline;
+}
+.cartimg{
+    width: 100px;
+    padding: 5px;
+    border: 0.4px solid rgba(218, 179, 255,0.1);
+}
+tr input{
+    background: transparent;
+    color: rgb(164, 124, 202);
+    outline: none;
+    border: 0;
+    font-size: 18px;
+    font-weight: 900;
+    transition-duration: 0.2s;
+}
+tr input:hover{
+    cursor: pointer;
+    font-size: 19px;
+}
+
+#count{
+    text-align: center;
+    border: 0;
+}
+
+#emptytext td{
+    padding-top: 50px;
+}
+@media screen and (max-width: 1800px){
+    #listData{
+        width: calc(52% - 160px);
+        margin-left: 50px;
+    }
+}
+@media screen and (max-width: 1690px){
+    body{
+        background-image: url("img/4_planw.jpg");
+
+    }
+    .context{
+        margin-top: 10px;
+    }
+    #downbar{
+        left: 390px;
+        top: 600px;
+    }
+    #videoabsolute{
+        left:390px;
+    }
+    #shopData {
+        width: calc(60% - 160px);
+        right: 7.8%;
+    }
+}
+@media screen and (max-width: 1550px){
+    #listData{
+        width: calc(50% - 160px);
+        margin-left: 50px;
+    }
+}
+@media screen and (max-width: 1350px){
+    #listData{
+        width: calc(45% - 160px);
+        margin-left: 20px;
+    }
+    #inspectData{
+        display: flex;
+        justify-content: center;
+        width: 390px;
+
+        background-color: rgba(138, 43, 226,0.05);
+        transition-duration: 0.2s;
+    }
+}
+@media screen and (max-width: 1200px){
+    body{
+        background-image: url("img/4_planw.jpg");
+
+    }
+    #navright{
+        display: none;
+
+    }
+    #navmenu{
+        display: none;
+        margin-top: 52px;
+        transition-duration: 0.3s;
+        margin-top: 30px;
+        position: absolute;
+        right: 70px;
+    }
+    #menufon{
+        position: absolute;
+        width: 100px;
+        height: 0;
+
+        transition-duration: 0.3s;
+        background-color: rgba(138, 43, 226,0.5);
+        z-index: -1;
+    }
+    #showme:hover #menufon{
+        height: 100%;
+        opacity: 0.3;
+    }
+    .navelement{
+        width: 90px;
+        text-align: center;
+        margin-top: -15px;
+        margin-right: 10px;
+    }
+    #showme:hover #navmenu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .navtext{
+        font-size: 14px;
+    }
+    #navmenu a:hover{
+        font-size: 15px;
+    }
+    #showme{
+        display: block;
+        transition-duration: 0.3s;
+        margin-top: 10px;
+        z-index: 10;
+
+    }
+    #menu{
+        position: absolute;
+        right: 100px;
+        top: 50px;
+        font-size: 21px;
+    }
+    #showme:hover{
+        cursor: pointer;
+        font-size: 18px;
+    }
+}

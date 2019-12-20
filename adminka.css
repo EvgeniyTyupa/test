@@ -1,0 +1,194 @@
+
+#infoTd{
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    padding: 5px; /* Поля вокруг текста */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+}
+#addtodbBut{
+    margin-top: 20px;
+    background-color: rgba(238, 130, 238, 0.4);
+    color: white;
+    border: 0;
+    width: 250px;
+    height: 30px;
+    transition-duration: 0.2s;
+    font-size: 14px;
+    font-weight: bold;
+}
+th{
+    padding: 2px;
+    border: 0.4px solid rgba(218, 179, 255,0.4);
+    position: sticky;
+    top: 0;
+}
+#addtodbBut:hover{
+    cursor: pointer;
+}
+#addtodbBut:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 27px -7px white;
+}
+#addtodbBut:focus{
+    outline: none;
+}
+#imgfile{
+    width: 105px;
+    border: 0;
+    outline: none;
+    
+}
+#dataList{
+    padding: 20px;
+    margin-left: 70px;
+    margin-top: 4%;
+    width: calc(62% - 160px);
+    height: 610px;
+    transition-duration: 0.2s;
+    overflow: auto;
+    background-color: rgba(138, 43, 226, 0.05);
+    transition-duration: 0.2s;
+}
+#dataList:hover{
+    background-color: rgba(66, 1, 128, 0.1);
+}
+#dataList th{
+  padding: 5px;
+  border: 0.4px solid rgba(218, 179, 255,0.4);
+  position: sticky;
+  top: 0;
+}
+#dataList input[type="checkbox"]{
+    background-color: rgba(66, 1, 128, 0.5);
+}
+td span{
+    z-index: 15;
+}
+.row{
+    transition-duration: 0.1s;
+}
+.row:hover{
+    box-shadow: 1px 1px 10px -6px white;
+    cursor: pointer;
+}
+table{
+    position: relative;
+    top:10px;
+    text-align: center;
+    
+}
+table a:hover{
+    text-decoration: underline;
+}
+.cartimg{
+    width: 100px;
+    padding: 5px;
+    border: 0.4px solid rgba(218, 179, 255,0.1);
+}
+
+#inspectData #addToDbForm{
+    display: block;
+}
+
+#adminPanel{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+}
+#adminPanel h3{
+    margin-left: 10px;
+}
+#adminKeys{
+    display: flex;
+}
+.adminKeyContainer{
+    width: 50px;
+    margin-left: 10px;
+}
+#adminPanel a{
+    transition-duration: 0.3s;
+    margin-block-start: 0em;
+}
+#adminPanel a:hover{
+    font-size: 18px;
+    cursor: pointer;
+}
+#shopListBut{
+    margin-left: 10px;
+    width: 150px;
+    height: 30px;
+}
+#keyPhoto:focus #inspectContainer{
+    display: none;
+}
+#keyPhoto:focus #inspectPhoto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#inspectPhoto{
+    display: none;
+    margin-top: 50px;
+    width: 70%;
+}
+
+.containerChecbox {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .containerChecbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: rgba(250, 250, 250, 0.1);
+    transition-duration: 0.1s;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .containerChecbox:hover input ~ .checkmark {
+    background-color:  rgba(238, 130, 238, 0.2);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .containerChecbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .containerChecbox .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }

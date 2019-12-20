@@ -1,0 +1,10 @@
+#photoPanel{
+    width: calc(100% - 20%);
+    height: 600px;
+    background-color: rgba(138, 43, 226,0.05);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+}
