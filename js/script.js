@@ -111,3 +111,9 @@ function deleteOrder(){
 
 var uploadImg = document.getElementById('userImagePath1');
 uploadImg.addEventListener('change', updateImageDisplay);
+
+
+
+jQuery(function($){
+    $("#phone").mask("(999) 999-9999");
+ });

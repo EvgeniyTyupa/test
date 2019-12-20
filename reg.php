@@ -6,7 +6,7 @@ if(isset($_POST['login']) && isset($_POST['pass']) && isset($_POST['email'])){
     $pass = $_POST['pass'];
     $pass2 = $_POST['pass2'];
     $email = $_POST['email'];
-    $phone = "+380".$_POST['phone'];
+    $phone = "+38".$_POST['phone'];
     $pwd = password_hash($pass, PASSWORD_DEFAULT);
     
 }
@@ -17,6 +17,9 @@ if(isset($_POST['login']) && isset($_POST['pass']) && isset($_POST['email'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+    <script src="js/script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="modal.css">
     <link rel="stylesheet" type="text/css" href="input.css">
@@ -110,14 +113,14 @@ if(isset($_POST['login']) && isset($_POST['pass']) && isset($_POST['email'])){
         <div class="outcont">
             <div class="regmain">
                 <h1>Registration</h1>
-                <form method="POST" action="reg.php">
+                <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <div class="field">
                         <label>Login: </label>
                         <input name="login" type="text" required placeholder="Login" autocomplete="off" value="<?=@$login?>"/>
                     </div>     
                     <div class="field">
                         <label>Phone: </label>
-                        <input name="phone" type="text" required placeholder="Phone Number" autocomplete="off" value="<?=@$phone?>"/>
+                        <input name="phone" type="text" required placeholder="Phone Number" autocomplete="off" id="phone"/>
                     </div>          
                     <div class="field">
                         <label>Email: </label>
@@ -138,20 +141,32 @@ if(isset($_POST['login']) && isset($_POST['pass']) && isset($_POST['email'])){
                 </form>
             </div>
             <?php
+            
                 if(isset($login)){
-                    if($pass == $pass2){
-                        $result = $mysqli->query("select login from users where login = '$login'");
-                        if(mysqli_num_rows($result) <= 0){
-                            $result = $mysqli->query("insert into users (login, pass, email, phone, is_admin, user_img) values ('$login','$pwd','$email','$phone','0', '')");
-                            echo "<p>DONE</p>";
-                            echo "<script>window.location='log.php'</script>";
+                    validation($login);
+                    validation($email);
+                    if(phoneNumber($phone)){
+                        if($pass == $pass2){
+                            $result = $mysqli->query("select login from users where login = '$login'");
+                            if(mysqli_num_rows($result) <= 0){
+                                $result = $mysqli->query("insert into users (login, pass, email, phone, is_admin, user_img) values ('$login','$pwd','$email','$phone','0', '')");
+                                if($result){
+                                    echo "<script>window.location='log.php'</script>";
+                                }
+                                else{
+                                    echo "<p>Error!</p>";
+                                }    
+                            }
+                            else if(mysqli_num_rows($result) > 0){
+                                echo "<p>User already registered!</p><br>";
+                            }
                         }
-                        else if(mysqli_num_rows($result) > 0){
-                            echo "<p>User already registered!</p><br>";
+                        else{
+                            echo "<p>The entered passwords do not match!</p>";
                         }
                     }
                     else{
-                        echo "<p>The entered passwords do not match!</p>";
+                        echo "<p>Incorrect phone number!</p>";
                     }
                 }
                 
@@ -181,7 +196,7 @@ if(isset($_POST['login']) && isset($_POST['pass']) && isset($_POST['email'])){
         </div>
     </div>
     
-        
-   
+
 </body>
+
 </html>

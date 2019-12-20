@@ -19,4 +19,32 @@
                 fwrite($file,$message."     \n");
                 fclose($file);
         }
+        function validation($input){
+                $input = trim($input);
+                $input = stripslashes($input);
+                $input = htmlspecialchars($input);
+                return $input;
+        }
+        function phoneNumber($input){
+                if(preg_match('/[0-9]/', $input)){
+                        if(strlen($input) == 10 || strlen($input) == 13){
+                                return true;
+                        }
+                        else{
+                                return false;
+                        }
+                }
+                else{
+                        return false;
+                }
+                
+        }
+        function isLength($input){
+                if(mb_strlen($input) < 2 || mb_strlen($input) > 20){
+                        return true;
+                }
+                else{
+                        return false;
+                }
+        }
 ?>
