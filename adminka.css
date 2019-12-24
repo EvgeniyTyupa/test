@@ -13,7 +13,31 @@
     height: 30px;
     transition-duration: 0.2s;
     font-size: 14px;
+    outline: none;
     font-weight: bold;
+}
+#proveBut{
+    margin-top: 20px;
+    background-color: rgba(238, 130, 238, 0.4);
+    color: white;
+    border: 0;
+    width: 250px;
+    height: 30px;
+    transition-duration: 0.2s;
+    font-size: 14px;
+    outline: none;
+    font-weight: bold;
+    align-self: flex-end;
+}
+#proveBut:hover{
+    cursor: pointer;
+}
+#proveBut:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 27px -7px white;
+}
+.butCont{
+    width: 100%;
 }
 th{
     padding: 2px;
@@ -28,15 +52,22 @@ th{
     cursor: pointer;
     box-shadow: 1px 1px 27px -7px white;
 }
-#addtodbBut:focus{
-    outline: none;
-}
+
 #imgfile{
-    width: 105px;
     border: 0;
+    background-color: rgba(238, 130, 238, 0.4);
+    color: white;
+    border: 0;
+    width: 250px;
+    height: 30px;
+    transition-duration: 0.2s;
+    font-size: 14px;
     outline: none;
-    
+    font-weight: bold;  
+    content: '';
 }
+
+
 #dataList{
     padding: 20px;
     margin-left: 70px;
@@ -131,6 +162,19 @@ table a:hover{
     margin-top: 50px;
     width: 70%;
 }
+
+.album{
+    margin-top: 40px;
+    
+}
+
+
+
+
+
+
+
+
 
 .containerChecbox {
     display: block;

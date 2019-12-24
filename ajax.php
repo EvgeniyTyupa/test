@@ -25,7 +25,6 @@
         $arr_tmp = [];
         $array = $_REQUEST['jsonStr'];
         $myarr = json_decode($array);
-        var_dump($myarr);
         for($i = 0; $i < count($myarr); $i++){
             $result = $mysqli->query("select id from orders where id = ".$myarr[$i].";");
             if(mysqli_num_rows($result) > 0){
@@ -49,5 +48,24 @@
             }
         }
     }
+    if(isset($_REQUEST['jsonPhoto'])){
+        $array = $_REQUEST['jsonPhoto'];
+        $myarr = json_decode($array);
+        for($i = 0; $i < count($myarr); $i++){
+            $result = $mysqli->query("select isHeader from photos where id = ".$myarr[$i]." and isHeader = 1");
+            if(mysqli_num_rows($result) > 0){
+                $result = $mysqli->query("update photos set isHeader = 1 where id = ".$myarr[$i++]."");
+            }
+            $result = $mysqli->query("delete from photos where id = ".$myarr[$i]."");
+        }
+    }
     
+    if(isset($_REQUEST['jsonProve'])){
+        $array = $_REQUEST['jsonProve'];
+        $myarr = json_decode($array);
+        for($i = 0; $i < count($myarr); $i++){
+            $result = $mysqli->query("update orders set Proved = 1 where id = ".$myarr[$i++]."");
+        }
+    }
+
 ?>

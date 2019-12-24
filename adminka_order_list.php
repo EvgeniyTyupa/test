@@ -115,12 +115,12 @@
                         <div class="adminKeyContainer">
                             <a href="adminka_photo.php">photo</a>
                         </div>
-                        <div class="adminKeyContainer">
+                        <!-- <div class="adminKeyContainer">
                             <a href="adminka_music.php">music</a>
                         </div>
                         <div class="adminKeyContainer">
                             <a href="adminka_event.php">event</a>
-                        </div>
+                        </div> -->
                     </div>       
                 </div>    
             </div> 
@@ -152,9 +152,11 @@
                                 <thead>
                                     <th style="border:0;"></th>
                                     <th width="10%">Number</th>
-                                    <th width="30%">User</th>
-                                    <th width="20%">Order</th>
+                                    <th width="20%">User</th>
+                                    <th width="10%">Order</th>
+                                    <th width="10%">Phone</th>
                                     <th width="20%">Date</th>
+                                    <th width="15%">Proved</th>
                                 </thead>
                                 <tbody>
                             <?php
@@ -171,10 +173,20 @@
                                 $userName = $userName = mysqli_fetch_array($resultUser);
                                 $userName = $userName['login'];
 
+
+                                $resultPhone = $mysqli->query("select phone from users where login = '".$userName."'");
+                                $phoneUser = mysqli_fetch_array($resultPhone);
+                                $phoneUser = $phoneUser['phone'];
+
                                 $result = $mysqli->query("select id from orders where orderName = ".$arr_item."");
                                 $itemId = mysqli_fetch_array($result);
                                 $itemId = $itemId['id'];
                                 
+
+                                
+                                $result = $mysqli->query("select proved from orders where orderName = ".$arr_item."");
+                                $proved = mysqli_fetch_array($result);
+                                $proved = $proved[0];
                                 
                                 echo "<tr>";
                                 ?>
@@ -188,7 +200,16 @@
                                 echo "<td>$count</td>";
                                 echo "<td>$userName</td>";
                                 echo "<td><a href='adminka_order_view.php?value=$arr_item' id='orderLink'>".$arr_item."</a></td>";
+                                echo "<td>$phoneUser</td>";
                                 echo "<td>".$dateTime."</td>";
+                                echo "<td>";
+                                    if($proved == 1){
+                                        echo "✓";
+                                    }
+                                    else{
+                                        echo "X";
+                                    }
+                                echo "</td>";
                                 echo "</tr>";
                                 $count++;
                             }  
@@ -198,7 +219,8 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><button name="delete" value="Delete" onclick="deleteOrder();" id="addtodbBut">Delete</button></td>
+                                <td></td>
+                                <td></td>
                             </tr>
                             <?php 
                         }
@@ -210,6 +232,10 @@
                     ?>
                             </tbody>
                         </table>
+                        <div class="butCont">
+                            <button name="prove" value="Prove it" onclick="proveOrder();" id="proveBut">Prove it</button>
+                            <button name="delete" value="Delete" onclick="deleteOrder();" id="addtodbBut">Delete</button>
+                        </div>
                 </div>
             </div>
 
@@ -226,6 +252,7 @@
             <div id="footLinks">
                     <a href="">soundcloud</a>
                     <a href="https://www.facebook.com/electroperedachi" target="_blank">facebook</a>
+                    <a href="https://www.youtube.com/electroperedachi" target="_blank">youtube</a>
                 </div>
                 <div id="cartDiv">
                     <a href="shopcart.php" id="cartLink">

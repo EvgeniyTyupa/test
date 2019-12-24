@@ -54,7 +54,7 @@
                 <div class="navelement">
                     <a href="photo.php" class="linkRouting">photo</a>
                 </div>  
-                <div class="navelement">
+                <!-- <div class="navelement">
                     <a href="music.php" class="linkRouting">music</a>
                 </div> 
                 <div class="navelement">
@@ -62,7 +62,7 @@
                 </div> 
                 <div class="navelement" id="contact">
                     <a href="contact.php" class="linkRouting">contact us</a>
-                </div>
+                </div> -->
             </div>  
             <div id="showme">
                 <span id="menu">menu</span>
@@ -95,17 +95,50 @@
                     </a>
                 </div>
             </div>
-            <div id="photoPanel">
-                
-            </div> 
-        </div>
-         
+        </div>  
+        <div id="photoList">
+            <?php
+                 $arrPhotoName = [];
+                 $result = $mysqli->query("select name from photos");
+                 $names = mysqli_fetch_all($result);
+                 
+                 for($i = 0;$i < count($names);$i++){
+                     array_push($arrPhotoName, $names[$i][0]);
+                 }
+                 $arr = array_unique($arrPhotoName);
+                 foreach($arr as $photo){
+                     $result = $mysqli->query("select img, date from photos where isHeader = 1 and name = '".$photo."'");
+                     $img = mysqli_fetch_array($result);
+                     $partyTime = $img['date'];
+                     $img = $img['img'];
+                     for($i = 0; $i < strlen($partyTime); $i++){
+                         if($partyTime[$i] == "-"){
+                             $partyTime[$i] = "/";
+                         }
+                     }
+                     ?>
+
+                         <div class="album">
+                             <a href="photo_album.php?value=<?=$photo?>">
+                                 <img src="<?=$img?>" alt="album" width=100%>
+                                 <p>electroperedachi <?=$partyTime?></p>
+                             </a>
+                             
+                         </div>
+
+
+
+                     <?php
+                 }
+            ?>
+        </div> 
     </div>
     <div class="footer">
         <div id="footleft">
             <div id="footLinks">
                     <a href="">soundcloud</a>
                     <a href="https://www.facebook.com/electroperedachi" target="_blank">facebook</a>
+                    <a href="https://www.youtube.com/electroperedachi" target="_blank">youtube</a>
                 </div>
                 <div id="cartDiv">
                     <a href="shopcart.php" id="cartLink">

@@ -54,7 +54,7 @@
             <div class="navelement">
                 <a href="photo.php" class="linkRouting">photo</a>
             </div>  
-            <div class="navelement">
+            <!-- <div class="navelement">
                 <a href="music.php" class="linkRouting">music</a>
             </div> 
             <div class="navelement">
@@ -62,7 +62,7 @@
             </div> 
             <div class="navelement" id="contact">
                 <a href="contact.php" class="linkRouting">contact us</a>
-            </div>
+            </div> -->
         </div>
       </div>  
       <div id="showme">
@@ -210,6 +210,7 @@
             <div id="footLinks">
                     <a href="">soundcloud</a>
                     <a href="https://www.facebook.com/electroperedachi" target="_blank">facebook</a>
+                    <a href="https://www.youtube.com/electroperedachi" target="_blank">youtube</a>
                 </div>
                 <div id="cartDiv">
                     <a href="shopcart.php" id="cartLink">

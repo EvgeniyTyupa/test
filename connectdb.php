@@ -19,6 +19,14 @@
                 fwrite($file,$message."     \n");
                 fclose($file);
         }
+        function isPrice($input){
+                if(preg_match('/[0-9]/', $input)){
+                        return true;
+                }
+                else{
+                        return false;
+                }
+        }
         function validation($input){
                 $input = trim($input);
                 $input = stripslashes($input);

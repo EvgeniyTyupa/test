@@ -33,7 +33,6 @@ form img{
     text-decoration: underline;
 }
 #inspectContainerUser{
-    margin-top: 50px;
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -66,15 +65,12 @@ form img{
    
 }
 #orderElement{
-    width: 110px;
+    width: 130px;
     padding-left: 10px;
 }
 #orderElement a{
     font-size: 16px;
     transition-duration: 0.3s;
-}
-#orderElement a:hover{
-    text-decoration: underline;
 }
 
 #orderMain{
@@ -94,6 +90,10 @@ form img{
     position: sticky;
     top: 0;
   }
+#personalContent table{
+    width: 100%;
+}
+
 
 /* 
 modal */

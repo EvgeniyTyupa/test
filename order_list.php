@@ -55,7 +55,7 @@
             <div class="navelement">
                 <a href="photo.php" class="linkRouting">photo</a>
             </div>  
-            <div class="navelement">
+            <!-- <div class="navelement">
                 <a href="music.php" class="linkRouting">music</a>
             </div> 
             <div class="navelement">
@@ -63,7 +63,7 @@
             </div> 
             <div class="navelement" id="contact">
                 <a href="contact.php" class="linkRouting">contact us</a>
-            </div>
+            </div> -->
         </div>
       </div>  
       <div id="showme">
@@ -100,9 +100,11 @@
       <div id="accInfo">
         <div id="inspectUser">
           <?php
+            
             $zapros = $mysqli->query("select * from users where login = '".$_SESSION['logged_user']."'");
             $inspectUser = mysqli_fetch_array($zapros);
             echo "<div id='inspectContainerUser'>";
+            echo "<h1>Profile</h1>";
             echo "<form action='office.php' method='POST' enctype='multipart/form-data'>";
             if($inspectUser['user_img'] == ""){
               echo "<form action='office.php' method='POST' enctype='multipart/form-data'>";
@@ -151,61 +153,10 @@
                         <a href="office.php">Personal Info</a>
                     </div>
                     <div id="orderElement" style="margin-left:40px; font-weight:900;">
-                        <a href="orderList.php" style="color: rgb(164, 124, 202);">Order List</a>
+                        <a href="order_list.php" style="color: rgb(164, 124, 202); font-weight:900; font-size:1.3rem;">Order List</a>
                     </div>
                 </div>
-                <div id="personalContent">
-                    <h3>Your orders: </h3>
-                    <?php
-                        $arr = [];
-                        $arr_tmp = [];
-                        $count = 1;
-                        $result = $mysqli->query("select id from users where login = '".$_SESSION['logged_user']."'");
-                        $userId = mysqli_fetch_array($result);
-                        $userId = $userId['id'];
-                        $result = $mysqli->query("select orderName from orders where userId = ".$userId."");
-                        if(mysqli_num_rows($result)> 0){
-                            $arr = mysqli_fetch_all($result);
-                            foreach($arr as $arr_it){
-                                $str = $arr_it[0];
-                                array_push($arr_tmp, $str);
-                            }
-                            for($i = 0; $i <= count($arr_tmp); $i++){
-                                if(@$arr_tmp[$i] === @$arr_tmp[$i+1]){
-                                    unset($arr_tmp[$i]);
-                                }
-                            }
-                            ?>
-                            <table>
-                                <thead>
-                                    <th width="20%">Number</th>
-                                    <th width="20%">Order</th>
-                                    <th width="20%">Date</th>
-                                </thead>
-                                <tbody>
-                            <?php
-                            foreach($arr_tmp as $arr_item){
-                           
-                                $result = $mysqli->query("select createAt from orders where orderName = ".$arr_item."");
-                                $dateTime = mysqli_fetch_array($result);
-                                $dateTime = $dateTime['createAt'];
-                                echo "<tr>";
-                                echo "<td>$count</td>";
-                                echo "<td><a href='order_view.php?value=$arr_item' id='orderLink'>".$arr_item."</a></td>";
-                                echo "<td>".$dateTime."</td>";
-                                echo "</tr>";
-                                $count++;
-                            }   
-                        }
-                        else{
-                            echo "<tr>";
-                            echo "<td>You have no orders yet.</td>";
-                            echo "</tr>";
-                        }   
-                    ?>
-                            </tbody>
-                        </table>
-                </div>
+              
             </div>
 
             
@@ -221,6 +172,7 @@
             <div id="footLinks">
                     <a href="">soundcloud</a>
                     <a href="https://www.facebook.com/electroperedachi" target="_blank">facebook</a>
+                    <a href="https://www.youtube.com/electroperedachi" target="_blank">youtube</a>
                 </div>
                 <div id="cartDiv">
                     <a href="shopcart.php" id="cartLink">

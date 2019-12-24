@@ -14,7 +14,7 @@ body{
     background-color:  rgba(138, 43, 226,0.1);
 }
 ::-webkit-scrollbar-thumb{
-    background-color:  rgba(138, 43, 226,0.3);
+    background-color:  rgba(138, 43, 226, 0.302);
 }
 #myVideo {
     position: fixed;
@@ -73,12 +73,13 @@ a{
 #navheader{
     
     height: calc(60px - 15px);
-    width: 200px;
+    width: 100%;
     font-size: 28px;
     font-weight: 800;
     float: left;
     padding-top: 15px;
     transition-duration: 0.3s;
+    
     
 }
 #borderhead{
@@ -93,12 +94,15 @@ a{
 }
 #headtext{
     color: white;
-
-}
-#navheader:hover{
-    font-size: 30px;
+    font-size: 40px;
+    margin: 0;
+    transition-duration: 0.3s;
     
 }
+#headtext a:hover{
+    font-size: 35px;
+}
+
 #navheader:hover #borderhead{
     width: 280px;
 }
@@ -137,13 +141,12 @@ a{
     cursor: pointer;
 }
 .navelement .linkRouting{
-    font-size: 18px;
-}
-.navelement .linkRouting{
+    font-size: 14px;
     transition-duration: 0.3s;
+    text-transform: uppercase;
 }
 .navelement:hover .linkRouting{
-    font-size: 19px;
+    font-size: 15px;
    
 }
 #userimg{
@@ -277,7 +280,7 @@ a{
 }
 #footleft{
     display: flex;
-    margin-left: 10px;
+
 
 }
 #footright p{
@@ -287,14 +290,18 @@ a{
     color: rgb(164, 124, 202);
 }
 .footer a{
-    
     margin-left: 15px;
-    font-size: 12px;
+    font-size: 0.8rem;
+    padding-bottom: 6px;
     transition-duration: 0.3s;
+    border-bottom: 0.27rem solid white;
     color: rgb(164, 124, 202);
+    text-transform: uppercase;
+    font-weight: bold;
 }
 #footLinks a:hover{
-    font-size: 13px;
+    font-size: 0.7rem;
+
 }
 #cartLink img{
     position: relative;
@@ -311,13 +318,15 @@ a{
     border-radius: 50%;
     background-color: white;
     font-weight: 900;
-    
 }
 #cartDiv{
     height: 40px;
     position: relative;
     top: -5px;
     transition-duration: 0.2s;
+}
+#cartDiv a{
+    border: none;
 }
 
 
@@ -435,6 +444,7 @@ a{
     height: 610px;
     transition-duration: 0.2s;
     overflow: auto;
+    background: rgba(0, 0, 0,0.7);
     
 }
 #shopData th{
@@ -445,6 +455,7 @@ a{
 }
 td span{
     z-index: 15;
+    
 }
 .row{
     transition-duration: 0.1s;

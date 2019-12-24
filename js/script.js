@@ -109,11 +109,32 @@ function deleteOrder(){
 });
 }  
 
-var uploadImg = document.getElementById('userImagePath1');
-uploadImg.addEventListener('change', updateImageDisplay);
+
+function proveOrder(){
+    var jsonProve = JSON.stringify(arrMas);
+    console.log(jsonProve);
+    $.ajax({
+    type: "POST",
+    url: "./ajax.php",
+    data: {jsonProve},
+    cache: false,
+    success: function(data){
+        window.location.reload(false);
+    }
+});
+}  
 
 
-
-jQuery(function($){
-    $("#phone").mask("(999) 999-9999");
- });
+function deletePhoto(){
+    var jsonPhoto = JSON.stringify(arrMas);
+    console.log(jsonPhoto);
+    $.ajax({
+    type: "POST",
+    url: "./ajax.php",
+    data: {jsonPhoto},
+    cache: false,
+    success: function(data){
+        window.location.reload(false);
+    }
+});
+}  

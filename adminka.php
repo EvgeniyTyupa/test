@@ -62,7 +62,7 @@
                     <div class="navelement">
                         <a href="photo.php" class="linkRouting">photo</a>
                     </div>  
-                    <div class="navelement">
+                    <!-- <div class="navelement">
                         <a href="music.php" class="linkRouting">music</a>
                     </div> 
                     <div class="navelement">
@@ -70,7 +70,7 @@
                     </div> 
                     <div class="navelement" id="contact">
                         <a href="contact.php" class="linkRouting">contact us</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>  
             <div id="showme">
@@ -125,10 +125,10 @@
                             </div>
                             <div class="field">
                                 <label>Img: </label>
-                                <input type="file" name="path" require id="imgfile">
+                                <input type="file" name="path" require style="110px" title="">
                             </div>
                             <div id="inputGo">
-                            <input type="submit" value="Add to Data Base" id="addtodbBut" style="margin-top:120px">       
+                                <input type="submit" value="Add to Data Base" id="addtodbBut" style="margin-top:120px">       
                             </div>
                             
                         </form>
@@ -141,12 +141,17 @@
                                     echo "<p>Already have an item with that name!</p>";
                                 }
                                 else{
-                                    if(move_uploaded_file($_FILES['path']['tmp_name'],$file)){
-                                        $result = $mysqli->query("insert into products (name, img, price, info) values ('$name', '$file', '$price', '$info')");
-                                        echo "<script>window.location='adminka.php'</script>";
-                                    }
+                                    if(isPrice($price)){
+                                        if(move_uploaded_file($_FILES['path']['tmp_name'],$file)){
+                                            $result = $mysqli->query("insert into products (name, img, price, info) values ('$name', '$file', '$price', '$info')");
+                                            echo "<script>window.location='adminka.php'</script>";
+                                        }
+                                        else{
+                                            echo "error!";
+                                        }
+                                    } 
                                     else{
-                                        echo "error!";
+                                        echo "<p>Price must have only numbers!</p>";
                                     }
                                 } 
                             }
@@ -170,12 +175,12 @@
                             <div class="adminKeyContainer">
                                 <a href="adminka_photo.php">photo</a>
                             </div>
-                            <div class="adminKeyContainer">
+                            <!-- <div class="adminKeyContainer">
                                 <a href="adminka_music.php">music</a>
                             </div>
                             <div class="adminKeyContainer">
                                 <a href="adminka_event.php">event</a>
-                            </div>
+                            </div> -->
                         </div>       
                     </div>    
                 </div>
@@ -229,6 +234,7 @@
             <div id="footLinks">
                     <a href="">soundcloud</a>
                     <a href="https://www.facebook.com/electroperedachi" target="_blank">facebook</a>
+                    <a href="https://www.youtube.com/electroperedachi" target="_blank">youtube</a>
                 </div>
                 <div id="cartDiv">
                     <a href="shopcart.php" id="cartLink">

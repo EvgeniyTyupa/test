@@ -64,7 +64,7 @@
                     <div class="navelement">
                         <a href="photo.php" class="linkRouting">photo</a>
                     </div>  
-                    <div class="navelement">
+                    <!-- <div class="navelement">
                         <a href="music.php" class="linkRouting">music</a>
                     </div> 
                     <div class="navelement">
@@ -72,7 +72,7 @@
                     </div> 
                     <div class="navelement" id="contact">
                         <a href="contact.php" class="linkRouting">contact us</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>  
             <div id="showme">
@@ -179,12 +179,12 @@
                             <div class="adminKeyContainer">
                                 <a href="adminka_photo.php">photo</a>
                             </div>
-                            <div class="adminKeyContainer">
+                            <!-- <div class="adminKeyContainer">
                                 <a href="adminka_music.php">music</a>
                             </div>
                             <div class="adminKeyContainer">
                                 <a href="adminka_event.php">event</a>
-                            </div>
+                            </div> -->
                         </div>       
                     </div>    
                 </div>
@@ -211,8 +211,8 @@
                             }
                             ?>
 
-                                <div>
-                                    <a href="">
+                                <div class="album">
+                                    <a href="adminka_photo_album.php?value=<?=$photo?>">
                                         <img src="<?=$img?>" alt="album" width=200px>
                                         <p>electroperedachi <?=$partyTime?></p>
                                     </a>
@@ -234,6 +234,7 @@
             <div id="footLinks">
                     <a href="">soundcloud</a>
                     <a href="https://www.facebook.com/electroperedachi" target="_blank">facebook</a>
+                    <a href="https://www.youtube.com/electroperedachi" target="_blank">youtube</a>
                 </div>
                 <div id="cartDiv">
                     <a href="shopcart.php" id="cartLink">

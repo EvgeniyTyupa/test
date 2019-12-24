@@ -66,9 +66,18 @@ input[type="submit"]:hover{
 }
 .outcont p{
     margin-top: 30px;
+    
 }
 
-
+textarea{
+    margin-bottom: 10px;
+    background: rgba(82, 81, 81, 0.2); 
+    border: 0;
+    padding: 6px;
+    outline: none;
+    color: white;
+    resize: none;
+}
 
 
 

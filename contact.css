@@ -1,0 +1,17 @@
+#contactCont{
+    width: calc(100% - 20%);
+    height: 600px;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: flex-start;
+}
+#formCont{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 100px;
+}
+#formCont h2{
+    margin-bottom: 50px;
+}
